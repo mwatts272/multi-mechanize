@@ -229,6 +229,10 @@ this example generates HTTP GETs, using httplib, with detailed timing::
     import time
 
     class Transaction(object):
+    
+        def __init__(self):
+            self.custom_timers = {}
+            
         def run(self):
             conn = httplib.HTTPConnection('www.example.com')
             start = time.time()
